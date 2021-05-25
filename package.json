@@ -11,9 +11,9 @@
   "scripts": {
     "build": "npm run clean && rollup -c",
     "clean": "rimraf dist",
-    "test": "jest --config jest.config.js",
+    "test": "jest --coverage --config jest.config.js",
     "lint": "eslint .",
-    "coveralls": "echo \"Error: no test specified\" && exit 1"
+    "coveralls": "jest --coverage && coveralls < coverage/lcov.info"
   },
   "repository": {
     "type": "git",
@@ -45,6 +45,7 @@
     "@rollup/plugin-babel": "5.x.x",
     "@rollup/plugin-node-resolve": "13.x.x",
     "@testing-library/react": "^11.2.7",
+    "coveralls": "^3.1.0",
     "eslint": "7.x.x",
     "eslint-plugin-react": "7.x.x",
     "eslint-plugin-react-hooks": "^4.2.0",
